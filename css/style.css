@@ -1,0 +1,371 @@
+:root {
+    --bg-color: hsl(0, 0%, 100%);
+    --font-color: hsl(0, 0%, 25%);
+    --rounded-corners: 10px;
+    --drop-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.2);
+    --active-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.4);
+    --text-shadow: 1px 1px #666;
+    --grey: #bbb;
+    --light-grey: #ddd;
+    --lighter-grey: #eee;
+    --dark-grey: #999;
+    --ATL: #e03a3e;
+    --BKN: #000000;
+    --BOS: #007a33;
+    --CHA: #00788c;
+    --CHI: #ce1141;
+    --CLE: #860038;
+    --DAL: #0053bc;
+    --DEN: #0e2240;
+    --DET: #c8102e;
+    --GSW: #ffc72c;
+    --HOU: #ce1141;
+    --IND: #002d62;
+    --LAC: #c8102e;
+    --LAL: #552583;
+    --MEM: #5d76a9;
+    --MIA: #98002e;
+    --MIL: #00471b;
+    --MIN: #0c2340;
+    --NOP: #85714d;
+    --NYK: #f58426;
+    --OKC: #ef3b24;
+    --ORL: #0077c0;
+    --PHI: #006bb6;
+    --PHX: #e56020;
+    --POR: #e03a3e;
+    --SAC: #5a2d81;
+    --SAS: #c4ced4;
+    --TOR: #ce1141;
+    --UTA: #f9a01b;
+    --WAS: #002b5c;
+}
+
+* {
+    box-sizing: border-box;
+    touch-action: manipulation;
+    /* disable double tap to zoom */
+}
+
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+    /* mobile viewport bug fix */
+    height: -webkit-fill-available;
+}
+
+body {
+    --bg-left: var(--DEN);
+    --bg-right: var(--ATL);
+    --bg-img-left: url(../img/DEN.svg);
+    --bg-img-right: url(../img/ATL.svg);
+    background: var(--bg-img-left) left top no-repeat, var(--bg-img-right) right top no-repeat, linear-gradient(90deg, var(--bg-left) 49.8%, rgba(0, 0, 0, 0) 49.8%), linear-gradient(90deg, #fff 50.2%, var(--bg-right) 50.2%);
+    background-size: 15%, 15%, 100%, 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    margin: 0;
+    padding: 0;
+    color: var(--font-color);
+    font-size: 100%;
+    font-family: 'Kanit', sans-serif;
+    min-height: 100dvh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/*
+-------------------------------------------------------------------
+HEADER
+-------------------------------------------------------------------
+*/
+
+header {
+    background-color: var(--bg-color);
+    margin: 3vmin 0 5vmin 0;
+    padding: 1vmin;
+    border-radius: var(--rounded-corners);
+    font-size: 3vmin;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+
+/*
+-------------------------------------------------------------------
+MAIN
+-------------------------------------------------------------------
+*/
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
+    width: 45vmin;
+    height: 55vmin;
+    background-color: var(--bg-color);
+    border-radius: var(--rounded-corners);
+    box-shadow: var(--drop-shadow);
+    transition: box-shadow 0.5s;
+}
+
+section.active {
+    box-shadow: var(--active-shadow);
+}
+
+.img-bg {
+    height: 40%;
+    background: linear-gradient(90deg, var(--grey), var(--light-grey));
+    border-radius: var(--rounded-corners) var(--rounded-corners) 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+    position: relative;
+}
+
+.img-bg img {
+    margin-left: 6vmin;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img-bg h2 {
+    transform: rotate(-90deg);
+    font-size: 8vmin;
+    font-weight: 900;
+    color: var(--light-grey);
+    margin: 0;
+    padding: 0;
+    width: 19vmin;
+    line-height: 1;
+    position: absolute;
+    top: 6vmin;
+    left: -4vmin;
+}
+
+main h1 {
+    margin: 0.7vmin 4vmin 0 4vmin;
+    font-size: 4vmin;
+    text-transform: uppercase;
+    color: var(--grey);
+    text-shadow: var(--text-shadow);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+main ul {
+    margin: 1vmin 0 0 4vmin;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+main li {
+    font-size: 1.8vmin;
+    font-weight: 800;
+    padding: 0.5vmin 0;
+    color: var(--font-color);
+    width: 20%;
+    transition: color 0.5s;
+}
+
+main li:nth-of-type(even):hover {
+    background-color: var(--light-grey);
+    text-align: center;
+    border-radius: var(--rounded-corners);
+    cursor: pointer;
+}
+
+main li:nth-of-type(odd) {
+    color: var(--dark-grey);
+}
+
+.higher {
+    color: hsl(120, 100%, 30%) !important;
+}
+
+.lower {
+    color: hsl(0, 100%, 30%) !important;
+}
+
+abbr {
+    text-decoration: none;
+    position: relative;
+}
+
+
+/*
+-------------------------------------------------------------------
+ASIDE
+-------------------------------------------------------------------
+*/
+
+aside {
+    margin-top: 5vh;
+    background-color: var(--bg-color);
+    border-radius: var(--rounded-corners);  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.scoreboard {
+    padding: 1vmin;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.players {
+    color: var(--dark-grey);
+    font-size: 3vmin;
+    font-weight: 700;
+}
+
+.players.active {
+    color: var(--font-color);
+}
+
+aside output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vmin;
+    width: 14vmin;
+}
+
+aside output span {
+    font-size: 10vmin;
+    color: var(--grey);
+    line-height: 1;
+    text-shadow: var(--text-shadow);
+    font-weight: 800;
+}
+
+#credit {
+    font-size: 0.8rem;
+    padding: 0.5vmin;
+    display: flex;
+    justify-content: center;
+    background-color: var(--grey);
+    border-radius: 0 0 var(--rounded-corners) var(--rounded-corners);
+}
+
+a:link, a:active, a:visited {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.animate {
+    animation: slideUp 1s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+/*
+-------------------------------------------------------------------
+MEDIA QUERIES
+-------------------------------------------------------------------
+*/
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --bg-color: hsl(0, 0%, 20%);
+        --font-color: hsl(0, 0%, 90%);
+        --text-shadow: 1px 1px #000;
+    }
+    main li:nth-of-type(even):hover {
+        color: var(--bg-color);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-size: 30%, 30%, 100%, 100%;
+    }
+    header {
+        margin: 1em;
+        font-size: 1.2em;
+        padding: 0 1em;
+    }
+    main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex: 1 0 auto;
+    }
+    .img-bg {
+        height: 35.7vw;
+    }
+    .img-bg h2 {
+        transform: rotate(0deg);
+        top: 8%;
+        left: 4%;
+    }
+    .img-bg img {
+        max-width: 45vw;
+        position: absolute;
+        right: 7%;
+    }
+    section {
+        width: 90vw;
+        height: max-content;
+        margin: 1vh;
+        position: relative;
+    }
+    main h1 {
+        position: absolute;
+        top: 14%;
+        left: 0;
+        color: var(--bg-color);
+        font-size: 1.4em;
+        width: 40vw;
+        height: 3.5em;
+        display: flex;
+        align-items: flex-end;
+    }
+    main li {
+        font-size: 1em;
+        width: 12%;
+        margin: 0.5vh 0;
+    }
+    aside output {
+        width: 5em;
+        height: 3em;
+    }
+    aside {
+        margin: 1em;
+    }
+    aside output span {
+        font-size: 3em;
+    }
+    .players {
+        font-size: 1.2em;
+        padding: 0 0.5em;
+    }
+}

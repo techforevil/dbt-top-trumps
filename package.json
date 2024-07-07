@@ -1,0 +1,23 @@
+{
+  "name": "dbt-top-trumps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techforevil/dbt-top-trumps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techforevil/dbt-top-trumps/issues"
+  },
+  "homepage": "https://github.com/techforevil/dbt-top-trumps#readme",
+  "dependencies": {
+    "puppeteer": "^19.6.2"
+  }
+}
